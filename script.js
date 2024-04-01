@@ -12,7 +12,9 @@ function updateClock(){
     if(hours>=12){
         ampm="PM";
     }
-    second=(second<10)?"0"+second:second; 
+    // 12 hour clock format
+    hours=hours%12;
+    hours=hours?hours:12;
 
     hour.innerText=hours;
     minute.innerText=minutes;
